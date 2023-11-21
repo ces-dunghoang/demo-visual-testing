@@ -20,6 +20,13 @@ export default class SitemapsService {
     const urls = await this.urlsRepository.find();
     return urls;
   }
+  async getUrl(id: number) {
+    const url = await this.urlsRepository.findOneBy({ id });
+    if (url) {
+      return url;
+    }
+    throw new HttpException('Url not found', HttpStatus.NOT_FOUND);
+  }
   extractLocValues(xmlData: any): void {
     // Assuming xmlData is an object representing the parsed XML structure
     // You may need to adjust this based on the actual structure of your XML
@@ -31,12 +38,13 @@ export default class SitemapsService {
         // Multiple URLs
         urls.forEach((url: any) => {
           if (url.loc) {
-            this.createUrl({ url: url.loc });
+            this.createUrl({ url: url.loc.toString() });
           }
         });
       } else if (urls.loc) {
         // Single URL
-        this.createUrl({ url: urls.loc });
+        console.log(urls.loc.toString());
+        this.createUrl({ url: urls.loc.toString() });
       }
     }
   }

@@ -15,6 +15,7 @@ import { DatabaseModule } from './database/database.module';
         POSTGRES_PASSWORD: Joi.string().required(),
         POSTGRES_DB: Joi.string().required(),
         PORT: Joi.number(),
+        AWS_PUBLIC_BUCKET_NAME: Joi.string().required(),
       }),
     }),
     DatabaseModule,
