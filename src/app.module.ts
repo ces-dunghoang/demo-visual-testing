@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
-import { PostsModule } from './posts/posts.module';
+import { SitemapsModule } from './sitemaps/sitemaps.module';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 import { DatabaseModule } from './database/database.module';
-import { UrlsModule } from './urls/urls.module';
 
 @Module({
   imports: [
-    PostsModule,
-    UrlsModule,
+    SitemapsModule,
     ConfigModule.forRoot({
       validationSchema: Joi.object({
         POSTGRES_HOST: Joi.string().required(),
