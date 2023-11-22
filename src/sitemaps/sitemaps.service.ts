@@ -12,9 +12,9 @@ export default class SitemapsService {
     private urlsRepository: Repository<Url>,
   ) {}
   async createUrl(url: CreateUrlDto) {
-    const newPost = await this.urlsRepository.create(url);
-    await this.urlsRepository.save(newPost);
-    return newPost;
+    const newUrl = this.urlsRepository.create(url);
+    const savedUrl = await this.urlsRepository.save(newUrl);
+    return savedUrl;
   }
   async getUrls() {
     const urls = await this.urlsRepository.find();
@@ -27,25 +27,33 @@ export default class SitemapsService {
     }
     throw new HttpException('Url not found', HttpStatus.NOT_FOUND);
   }
-  extractLocValues(xmlData: any): void {
+  async extractLocValues(xmlData: any): Promise<Url[]> {
+    const createdUrls: string[] = [];
+
     // Assuming xmlData is an object representing the parsed XML structure
     // You may need to adjust this based on the actual structure of your XML
 
     if (xmlData.urlset && xmlData.urlset.url) {
-      const urls = xmlData.urlset.url;
-
-      if (Array.isArray(urls)) {
-        // Multiple URLs
-        urls.forEach((url: any) => {
-          if (url.loc) {
-            this.createUrl({ url: url.loc.toString() });
+      const createdUrls: Url[] = [];
+      if (xmlData.urlset && xmlData.urlset.url) {
+        const urls = xmlData.urlset.url;
+        if (Array.isArray(urls)) {
+          // Multiple URLs
+          for (const url of urls) {
+            if (url.loc) {
+              const createdUrl = url.loc.toString();
+              const savedUrl = await this.createUrl({ url: createdUrl });
+              createdUrls.push(savedUrl);
+            }
           }
-        });
-      } else if (urls.loc) {
-        // Single URL
-        console.log(urls.loc.toString());
-        this.createUrl({ url: urls.loc.toString() });
+        } else if (urls.loc) {
+          // Single URL
+          const createdUrl = urls.loc.toString();
+          const savedUrl = await this.createUrl({ url: createdUrl });
+          createdUrls.push(savedUrl);
+        }
       }
+      return createdUrls;
     }
   }
 }

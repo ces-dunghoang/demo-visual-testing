@@ -42,8 +42,7 @@ export default class SiteMapsController {
 
     try {
       const xmlData = await parseStringAsync(file.buffer.toString());
-      const locValues = this.sitemapsService.extractLocValues(xmlData);
-      return this.sitemapsService.getUrls();
+      return this.sitemapsService.extractLocValues(xmlData);
     } catch (error) {
       console.error('Error parsing XML:', error);
       throw error;
