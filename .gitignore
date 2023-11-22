@@ -390,3 +390,7 @@ Temporary Items
 docker.env
 .env
 dist
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
