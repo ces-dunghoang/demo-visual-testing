@@ -18,6 +18,9 @@ import { chromium } from 'playwright';
 import { S3Service } from 'src/AWS-S3/s3.service';
 import { v2 as cloudinary } from 'cloudinary';
 import * as dotenv from 'dotenv';
+import { log } from 'console';
+import { v4 as uuid } from 'uuid';
+import Url from './urls.entity';
 
 dotenv.config();
 
@@ -53,13 +56,15 @@ export default class SiteMapsController {
   }
 
   @Get('takescreenshot/:id')
-  async takeScreenshot(@Param('id') id: number) {
+  async takeScreenshot(
+    @Param('id') id: number,
+  ): Promise<{ url: Url; screenshotUrl: string }> {
     const urlModel = await this.sitemapsService.getUrl(id);
     const url = urlModel.url;
     const browser = await chromium.launch();
     const page = await browser.newPage();
     await page.goto(url);
-    const screenshotPath = `screenshots/${url}.png`;
+    const screenshotPath = `screenshots/${uuid()}/${url}.png`;
     await page.screenshot({
       path: screenshotPath,
       fullPage: true,
@@ -74,7 +79,7 @@ export default class SiteMapsController {
 
     // fs.unlinkSync(screenshotPath);
 
-    return cloudinaryUploadResult.url;
+    return { url: urlModel, screenshotUrl: cloudinaryUploadResult.url };
     //  const uploadResult = await this.s3Service.uploadImage(screenshotPath);
   }
 }
