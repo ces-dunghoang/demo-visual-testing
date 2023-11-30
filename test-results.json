@@ -1,0 +1,302 @@
+{
+  "config": {
+    "configFile": "/home/ces-user/Documents/nestjs-typescript/playwright.config.ts",
+    "rootDir": "/home/ces-user/Documents/nestjs-typescript/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": true,
+    "projects": [
+      {
+        "outputDir": "/home/ces-user/Documents/nestjs-typescript/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/ces-user/Documents/nestjs-typescript/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/ces-user/Documents/nestjs-typescript/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/home/ces-user/Documents/nestjs-typescript/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/ces-user/Documents/nestjs-typescript/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/home/ces-user/Documents/nestjs-typescript/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.40.0",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "example.spec.ts",
+      "file": "example.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "visual testing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 4010,
+                  "error": {
+                    "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  2274 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-chromium-linux.png\u001b[39m\nReceived: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-actual.png\u001b[39m\n    Diff: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - 2274 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 2274 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n",
+                    "stack": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  2274 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-chromium-linux.png\u001b[39m\nReceived: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-actual.png\u001b[39m\n    Diff: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - 2274 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 2274 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n    at /home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts:5:22",
+                    "location": {
+                      "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                      "column": 22,
+                      "line": 5
+                    },
+                    "snippet": "  3 | test('visual testing', async ({ page }) => {\n  4 |   await page.goto('https://www.google.com/');\n> 5 |   await expect(page).toHaveScreenshot();\n    |                      ^\n  6 |   // Expect a title \"to contain\" a substring.\n  7 | });\n  8 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                        "column": 22,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  2274 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-chromium-linux.png\u001b[39m\nReceived: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-actual.png\u001b[39m\n    Diff: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - 2274 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 2274 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n\n  3 | test('visual testing', async ({ page }) => {\n  4 |   await page.goto('https://www.google.com/');\n> 5 |   await expect(page).toHaveScreenshot();\n    |                      ^\n  6 |   // Expect a title \"to contain\" a substring.\n  7 | });\n  8 |\n\n    at /home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts:5:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-12-08T09:19:04.853Z",
+                  "attachments": [
+                    {
+                      "name": "visual-testing-1-expected.png",
+                      "contentType": "image/png",
+                      "path": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-chromium-linux.png"
+                    },
+                    {
+                      "name": "visual-testing-1-actual.png",
+                      "contentType": "image/png",
+                      "path": "/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-actual.png"
+                    },
+                    {
+                      "name": "visual-testing-1-diff.png",
+                      "contentType": "image/png",
+                      "path": "/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-chromium/visual-testing-1-diff.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                    "column": 22,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-1908639166dcfd172c00",
+          "file": "example.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "visual testing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "failed",
+                  "duration": 4537,
+                  "error": {
+                    "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  2232 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-firefox-linux.png\u001b[39m\nReceived: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-actual.png\u001b[39m\n    Diff: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - 2232 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 2232 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n",
+                    "stack": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  2232 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-firefox-linux.png\u001b[39m\nReceived: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-actual.png\u001b[39m\n    Diff: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - 2232 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 2232 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n    at /home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts:5:22",
+                    "location": {
+                      "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                      "column": 22,
+                      "line": 5
+                    },
+                    "snippet": "  3 | test('visual testing', async ({ page }) => {\n  4 |   await page.goto('https://www.google.com/');\n> 5 |   await expect(page).toHaveScreenshot();\n    |                      ^\n  6 |   // Expect a title \"to contain\" a substring.\n  7 | });\n  8 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                        "column": 22,
+                        "line": 5
+                      },
+                      "message": "Error: \u001b[31mScreenshot comparison failed:\u001b[39m\n\n  2232 pixels (ratio 0.01 of all image pixels) are different.\n\nExpected: \u001b[33m/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-firefox-linux.png\u001b[39m\nReceived: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-actual.png\u001b[39m\n    Diff: \u001b[33m/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-diff.png\u001b[39m\n\nCall log:\n  \u001b[2m- page._expectScreenshot with timeout 5000ms\u001b[22m\n\u001b[2m  -   verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - 2232 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  -   disabled all CSS animations\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - 2232 pixels (ratio 0.01 of all image pixels) are different.\u001b[22m\n\n\n  3 | test('visual testing', async ({ page }) => {\n  4 |   await page.goto('https://www.google.com/');\n> 5 |   await expect(page).toHaveScreenshot();\n    |                      ^\n  6 |   // Expect a title \"to contain\" a substring.\n  7 | });\n  8 |\n\n    at /home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts:5:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-12-08T09:19:04.871Z",
+                  "attachments": [
+                    {
+                      "name": "visual-testing-1-expected.png",
+                      "contentType": "image/png",
+                      "path": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts-snapshots/visual-testing-1-firefox-linux.png"
+                    },
+                    {
+                      "name": "visual-testing-1-actual.png",
+                      "contentType": "image/png",
+                      "path": "/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-actual.png"
+                    },
+                    {
+                      "name": "visual-testing-1-diff.png",
+                      "contentType": "image/png",
+                      "path": "/home/ces-user/Documents/nestjs-typescript/test-results/example-visual-testing-firefox/visual-testing-1-diff.png"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                    "column": 22,
+                    "line": 5
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-858a4fc95bddf686dfa2",
+          "file": "example.spec.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "visual testing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "failed",
+                  "duration": 1434,
+                  "error": {
+                    "message": "Error: page.goto: WebKit encountered an internal error\nCall log:\n  \u001b[2m- navigating to \"https://www.google.com/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: WebKit encountered an internal error\nCall log:\n  \u001b[2m- navigating to \"https://www.google.com/\", waiting until \"load\"\u001b[22m\n\n    at /home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts:4:14",
+                    "location": {
+                      "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                      "column": 14,
+                      "line": 4
+                    },
+                    "snippet": "  2 |\n  3 | test('visual testing', async ({ page }) => {\n> 4 |   await page.goto('https://www.google.com/');\n    |              ^\n  5 |   await expect(page).toHaveScreenshot();\n  6 |   // Expect a title \"to contain\" a substring.\n  7 | });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                        "column": 14,
+                        "line": 4
+                      },
+                      "message": "Error: page.goto: WebKit encountered an internal error\nCall log:\n  \u001b[2m- navigating to \"https://www.google.com/\", waiting until \"load\"\u001b[22m\n\n\n  2 |\n  3 | test('visual testing', async ({ page }) => {\n> 4 |   await page.goto('https://www.google.com/');\n    |              ^\n  5 |   await expect(page).toHaveScreenshot();\n  6 |   // Expect a title \"to contain\" a substring.\n  7 | });\n\n    at /home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts:4:14"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-12-08T09:19:04.887Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/home/ces-user/Documents/nestjs-typescript/tests/example.spec.ts",
+                    "column": 14,
+                    "line": 4
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a30a6eba6312f6b87ea5-fb9728b0c6614af43e2e",
+          "file": "example.spec.ts",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2023-12-08T09:19:04.299Z",
+    "duration": 7441.689,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

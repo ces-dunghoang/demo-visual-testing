@@ -1,10 +1,7 @@
 import {
-  Body,
   Controller,
-  Delete,
   Get,
   Param,
-  Patch,
   Post,
   UploadedFile,
   UseInterceptors,
@@ -21,7 +18,7 @@ import * as dotenv from 'dotenv';
 import { log } from 'console';
 import { v4 as uuid } from 'uuid';
 import Url from './urls.entity';
-
+import { ChildProcess, spawn } from 'child_process';
 dotenv.config();
 
 cloudinary.config({
@@ -75,10 +72,31 @@ export default class SiteMapsController {
         folder: 'my-web-archive',
       },
     );
-
     // fs.unlinkSync(screenshotPath);
 
     return { url: urlModel, screenshotUrl: cloudinaryUploadResult.url };
     //  const uploadResult = await this.s3Service.uploadImage(screenshotPath);
+  }
+  @Get('visual-testing/test')
+  async visualTesting() {
+    // Command and arguments
+    const command: string = 'npx';
+    const args: string[] = ['playwright', 'test'];
+    // Spawn the process
+    const child: ChildProcess = spawn(command, args);
+    // Listen for data from the process
+    child.stdout.on('data', (data: Buffer) => {
+      console.log(`stdout: ${data}`);
+    });
+
+    // Listen for errors from the process
+    child.stderr.on('data', (data: Buffer) => {
+      console.error(`stderr: ${data}`);
+    });
+    // Listen for the process to close
+    child.on('close', (code: number) => {
+      console.log(`child process exited with code ${code}`);
+      return 'ok';
+    });
   }
 }
